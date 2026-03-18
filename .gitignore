@@ -1,3 +1,4 @@
-금융학습키.txt 
-.env 
-"금융학습키.txt" 
+금융학습키.txt
+.env
+node_modules
+dist
