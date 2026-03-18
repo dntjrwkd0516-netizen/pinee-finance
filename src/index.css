@@ -1,0 +1,132 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #00ffa3;
+  --primary-dark: #00d688;
+  --bg-dark: #0a0e14;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --border-card: rgba(255, 255, 255, 0.1);
+  --text-main: #e0e6ed;
+  --text-muted: #94a3b8;
+  --accent-gold: #ffd700;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.learning-session {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.glass-card {
+  width: 100%;
+  padding: 48px;
+  background: rgba(26,26,46,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 32px;
+  backdrop-filter: blur(30px);
+}
+
+.btn {
+  background: var(--primary);
+  color: #000;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  width: 100%;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border-card);
+  color: var(--text-main);
+  margin-top: 12px;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease;
+}
+
+.pinee-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Quiz Styles */
+.quiz-option {
+  padding: 16px;
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quiz-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary);
+}
+
+.quiz-option.selected {
+  background: rgba(0, 255, 163, 0.1);
+  border-color: var(--primary);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
